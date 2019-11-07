@@ -6,8 +6,6 @@ from threading import Thread
 
 def run_timer(seconds):
     for remaining in range(seconds, 0, -1):
-        #Previous print version, no need for sys anymore to be honest
-        #sys.stdout.write("\r")
         minutes = 0
         seconds = remaining
         if remaining > 60:
@@ -16,9 +14,6 @@ def run_timer(seconds):
         else:
             seconds = remaining
         print("\r{:2d} minutes {:2d} seconds remaining.".format(minutes,seconds), flush = True, end="")
-        #Also from previous version, no need for sys but a good refernce
-        #sys.stdout.write("{:2d} minutes {:2d} seconds remaining.".format(minutes,seconds)) 
-        #sys.stdout.flush()
         time.sleep(1)
     print("\nTime is up!", flush = True, end="                \r") 
     if __name__ == '__main__':
