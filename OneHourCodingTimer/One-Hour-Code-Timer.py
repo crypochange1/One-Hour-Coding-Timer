@@ -20,12 +20,12 @@ def run_timer(seconds):
         #sys.stdout.write("{:2d} minutes {:2d} seconds remaining.".format(minutes,seconds)) 
         #sys.stdout.flush()
         time.sleep(1)
-    print("\rTime is up!") 
+    print("\nTime is up!", flush = True, end="                \r") 
     if __name__ == '__main__':
-        Thread(target = playsound('C:\Windows\Media\Alarm01.wav')).start()
-        Thread(target = messagebox.showinfo("Alert", "Your one hour coding is done! Good Job fella!")).start()
+        playsound('C:\Windows\Media\Alarm01.wav')
+        messagebox.showinfo("Alert", "Your one hour coding is done! Good Job fella!")
         
 #Start Timer
 input("Press enter to start one hour timer...")
-#place the amount of seconds you want in the timer function brackets()
-run_timer(3600)#)
+#Place the amount of seconds you want in the timer function brackets()
+run_timer(3)#)
